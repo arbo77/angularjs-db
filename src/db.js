@@ -97,7 +97,7 @@ function _getConnection($q, config) {
       if (connection.objectStoreNames.contains(store))
         connection.deleteObjectStore(store);
       connection.createObjectStore(store, {
-        keyPath: 'id',
+        keyPath: config.keys || 'id',
         autoIncrement: true
       });
     });
